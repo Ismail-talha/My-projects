@@ -1,0 +1,136 @@
+﻿<div class="BGLI bg-2" style="min-height: 508px;">
+    
+        <div id="mbgi" class="mbgi">
+            <img src="../images/header mobile.png" class="wdth img-responsive" />
+        </div>
+        <div id="ordronbtn" class="ordronbtn row text-center">
+            <span>
+                <a ng-click="gotoaddtocart()" class="arrow-clr">
+                    <img src="../images/back .png" />
+                </a><input type="button" class="btn btn-default active location-btn rl-wd" value="Signin" />
+            </span>
+        </div>
+
+        <div class=col-xs-12 style="padding-left: 5px;padding-right: 5px;margin-top: 20px;">
+            <button class="accor accor-brder accor-top">Returning Customer</button>
+            <div class="panel2">
+                <div class="col-xs-12">
+                    <div class="c-mobile-no">
+                        Mobile No.
+                    </div>
+                    <div class="no-area">
+                        <input type="number" class="form-control no-area" placeholder="966 54 8752644" />
+                    </div>
+                    <div class="c-pass">
+                        Password
+                    </div>
+                    <div class="p-area">
+                        <input type="password" class="form-control pass-area" placeholder="****************" />
+                    </div>
+                    <div class="regist-button">
+                        <input type="button" class="form-control c-reg sign-in" value="Sign In" ng-click="chk();" />
+                    </div>
+                </div>
+            </div>
+
+            <button class="accor accor-brder">Order As Guest</button>
+            <div class="panel2">
+                <div class="col-xs-12">
+                    <div class="c-mobile-no">
+                        Mobile No.
+                    </div>
+                    <div class="no-area">
+                        <input type="number" class="form-control no-area" placeholder="966 54 8752644" />
+                    </div>
+                    <div class="c-full-name">
+                        Full Name
+                    </div>
+                    <div class="t-area">
+                        <input type="text" class="form-control t-area" placeholder="Muhammad" />
+                    </div>
+                    <div class="c-email">
+                        Email
+                    </div>
+                    <div class="e-area">
+                        <input type="email" class="form-control e-area" placeholder="abc@marntech.com" />
+                    </div>
+                    <div class="c-address">
+                        Gender
+                    </div>
+                    <div class="c-gndr">
+                        <select class="form-control gndr">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+
+                    <div class="regist-button">
+                        <input type="button" class="form-control c-reg c-cont" value="Continue" ng-click="chk();" />
+                    </div>
+                </div>
+            </div>
+
+            <button class="accor in">Register Yourself</button>
+            <div id="panel3" class="panel2">
+                <div class="col-xs-12">
+                    <div class="c-mobile-no">
+                        Mobile No.
+                    </div>
+                    <div class="no-area">
+                        <input type="number" class="form-control no-area" placeholder="966 54 8752644" />
+                    </div>
+                    <div class="c-full-name">
+                        Full Name
+                    </div>
+                    <div class="t-area">
+                        <input type="text" class="form-control t-area" placeholder="Muhammad" />
+                    </div>
+                    <div class="c-email">
+                        Email
+                    </div>
+                    <div class="e-area">
+                        <input type="email" class="form-control e-area" placeholder="abc@marntech.com" />
+                    </div>
+                    <div class="c-address">
+                        Address
+                    </div>
+                    <div class="a-area">
+                        <input type="text" class="form-control a-area" />
+                    </div>
+                    <div class="regist-button">
+                        <input type="button" class="form-control c-reg" value="Register" ng-click="chk();" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--<div class="js">    
+    <div id="preloader1"></div>
+</div>-->
+<script>
+    var acc1 = document.getElementsByClassName("accor");
+    var i;
+
+    for (i = 0; i < acc1.length; i++) {
+        acc1[i].onclick = function () {
+       
+            this.classList.toggle("active");
+            var panel2 = this.nextElementSibling;
+
+            if (panel2.style.maxHeight) {
+                panel2.style.maxHeight = null;
+            } else {
+                panel2.style.maxHeight = panel2.scrollHeight + "px";
+            }
+        }
+    }
+
+    var temp = document.getElementsByClassName('accor-top')
+    var elem = temp[0]
+    elem.classList.toggle("active");
+    var panel2 = elem.nextElementSibling;
+    panel2.style.maxHeight = 250 + "px";
+
+
+</script>

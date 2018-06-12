@@ -1,0 +1,151 @@
+﻿
+<div class="step-2" ng-show="modd">
+    <div class="min-height">
+        <div id="mbgi" class="mbgi">
+            <img src="../images/header mobile.png" class="wdth img-responsive" />
+        </div>
+        
+        <div id="BGLI" class="BGLI">
+            <div id="ordronbtn" class="ordronbtn row text-center">
+                <span>
+                    <a ng-click="backtolocationmobile()" class="arrow-clr">
+                        <img src="../images/back .png" />
+                    </a><input type="button" class="btn btn-default active location-btn rl-wd" value="REAL MENU" />
+                    <a ng-click="" class="cart-clr">
+                        <img src="../images/cart .png" />
+                    </a>
+                </span>
+            </div>
+            <div class="loader_cntr"><img id="mySpinner" src="../images/loader.gif" ng-show="loading" /></div>
+            <div>
+                <div class="real-select" ng-hide="loading">
+                    <div>
+                        <select class="customizing" name="mySelect" id="mySelect"
+                                ng-options="option.name for option in products track by option.CategoryID"
+                                ng-model="selectedCategory" ng-disabled="products.length <=1"></select>
+                        <br />
+                        <select class="customizing" name="mySelect2" id="mySelect2"
+                                ng-options="option.name for option in selectedCategory.subCategory track by option.subCategoryID"
+                                ng-model="selectedSubCategory"></select>
+                    </div>
+                </div>
+
+                <div class="burgers-list">
+                    <a ng-click="openModifier(item);" class="white" ng-repeat="item in selectedSubCategory.items">
+                        <div class="burgers">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <div class="burger-radius"><img src="{{item.imageURL}}" ng-click="modd!=modd" class="img-responsive" /></div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="txt">
+                                        {{item.name}}
+                                    </div>
+                                </div>
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-3">
+                                    <div class="amount">
+                                        {{item.price | number:2}} SR
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mobile-sticky-footer" style="">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="view-cart"><a style="color:#FFF">Cart</a> | <a style="color:#FFF">Clear Cart</a></div>
+                    </div>
+                    <div class="col-xs-6" style="">
+                        <div class="amount-cart">
+                            3 | 65 SAR
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="min-height" ng-hide="modd">
+    <div class="burger-cross">
+        <div class="cross">
+            <a ng-click="moddFalse();"> <i class="fa fa-times off"></i></a>
+        </div>
+        <div class="chicken-burger">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="left-burger">
+                        {{}}
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="right-amount">
+                        {{}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-mod-bg">
+        <div class="modifiers mod2" ng-repeat="mod in Modifiers">
+            <div class="rows">
+                <div class="col-xs-1">
+                    <div class="check-box">
+                        <input type="checkbox" name="tick" ng-model="mod.isselected" value="mod" ng-click="boxselected(mod, $index, mod.isselected)" />
+                        <label for={{mod.name}} &nbsp; {{mod.price}}></label>
+                    </div>
+                </div>
+                <div class="col-xs-2" style="padding-right: 0px;padding-left: 5px;">
+                    <div class="onions">{{mod.name}}</div>
+                </div>
+                <div class="col-xs-1"></div>
+                <div class="col-xs-3">
+                    <div class="mod-amount">{{mod.price | number:2}} SR</div>
+                </div>
+
+
+
+                <div class="col-xs-5" style="padding-right: 8px; padding-left: 30px;">
+                    <div class="add/sub">
+                        <span>
+                            <span id="subtract" style="float:left" ng-click="decrement($index)">
+                                <img src="../images/minus.png" />
+                            </span>
+                            <span id="counter">{{mod.qty}}</span>
+                            <span id="add" style="float:right" ng-click="increment($index)">
+                                <img src="../images/plus .png" />
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mobile-sticky-footer" style="">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="quantity">
+                        Quantity<span class="q-num">
+                            <input type="number" value="0" min="0" max="999" name="input" class="text-center" ng-change="qtyMod();" ng-model="value"/>
+                        </span>
+                    </div>
+
+
+                </div>
+                <div class="col-xs-6" style="">
+                    <div class="add-to-cart">
+                        <a ng-click="carttoaddtocart()" style="color:white;">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

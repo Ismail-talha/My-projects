@@ -1,0 +1,605 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+      <title>The Real Burger</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+      <link href="css/custom.css" rel="stylesheet" />
+      <link href="css/styles.css" rel="stylesheet" />
+      <link href="assets/css/style.css" rel="stylesheet" />
+      <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+      <link href="css/menu.css" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" href="assets/js/vendor/rs-plugin/css/settings.css" media="screen" />
+      <link href="css/button.css" rel="stylesheet" />
+      <link href="css/container.css" rel="stylesheet" />
+      <link href="css/font.css" rel="stylesheet" />
+      <link href="css/icon.css" rel="stylesheet" />
+      <link href="css/segment.css" rel="stylesheet" />
+      <link href="css/semantic.css" rel="stylesheet" />
+      <link href="assets/css/icon.css" rel="stylesheet" />
+       <!-- fixisues css  -->
+       <link href="css/fixissues.css" rel="stylesheet" />
+       <!-- end -->
+ 
+      <link rel="stylesheet" type="text/css" href="css/slick.css">
+      <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+      <link href="css/onlineorder.css" rel="stylesheet" />
+      <script src="js/jquery.js"></script>
+      <script src="scripts/QueryUi.js"></script>
+      <script src="js/semantic.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl-EDTJ5_uU3zBIX7-wNTu-qSZr1DO5Dw"></script>
+      <!--<script src="scripts/angular.min.js"></script>
+         <script src="scripts/angular-route.min.js"></script>-->
+      <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+      <script src="scripts/app.js"></script>
+      <script>
+
+          function MenuHideShow(){
+  
+    
+            if ($(window).width() <= 988) {
+                     $("#newNav").show();
+                    // $("#hide" && "#hide1").hide();
+                    $("#hide").hide();
+                    $("#hide1").hide();
+                     $("#hide3").hide();
+         
+                     //FOOTER
+                     $(".footer-bottom").show();
+                     $(".footer-main").hide();
+         
+                     //BGIMG
+                     $("#mbgi").show();
+                     $(".bg_img").hide();
+         
+                     //OURSTORY
+         
+                     $("#BGLI").show();
+                     $("#ourr").hide();
+         
+                     $("#BGLI").show();
+                     $(".mbg").hide();
+         
+                     $("#BGLI").show();
+                     $(".storyWrap").hide();
+         
+                     $("#BGLI").show();
+                     $(".seeoff").hide();
+                 }
+                 else {
+         
+                     $("#newNav").hide();
+                   // $("#hide" && "#hide1").show();
+                     $("#hide").hide();
+                     $("#hide3").show();
+         
+                     //FOOTER
+                     $(".footer-bottom").show();
+                     $(".footer-main").show();
+         
+                     //BGIMG
+                     $("#mbgi").hide();
+                     $(".bg_img").show();
+         
+                     //OURSTORY
+                     $(".our_img").show();
+                     $("#BGLI").hide();
+         
+                     $(".mbg").show();
+                     $("#BGLI").hide();
+         
+                     $(".storyWrap").show();
+                     $("#BGLI").hide();
+         
+                     $(".seeoff").show();
+                     $("#BGLI").hide();
+         
+                 }
+        
+          }
+         $(document).ready(function () {
+              MenuHideShow();
+
+              $(window).resize(function () {
+                MenuHideShow();
+             });
+         });
+      </script>
+      <base href="/">
+   </head>
+   <body id="body-web" ng-app="BURGERAPP" style="display:none;" onload="$('#body-web').removeAttr('style');">
+      <header id="header" class="transparent-header light thlt" style="background: transparent;border-bottom: none !important;">
+         <!--max-height: 117px;-->
+         <div id="header-wrap">
+            <div class="header_1">
+               <div id="hide" class="container">
+                  <div class="row">
+                     <div class="col-sm-1 csm1">
+                        <div id="mySidenav" class="sidenav" ng-controller="navCtrl">
+                           <div id="menu-left-menu1" class="menu" ng-click="closeNav()">
+                              <a href="javascript:void(0)" class="closebtn">&times;</a>
+                              <span id="menu-item-85" class="homeIcon menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5 current_page_item menu-item-85"><a href="\">Home</a></span>
+                              <span id="menu-item-84" class="aboutIcon menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a class="sidevav-pad" href="/#about">Our Vision</a></span>
+                              <span id="menu-item-82" class="contactIcon menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="/#contact">Contact</a></span>
+                              <span id="menu-item-238" class="loginIcon menu-item menu-item-type-post_type menu-item-object-page menu-item-238"><a href="#">Login</a></span>
+                           </div>
+                        </div>
+                        <div id="main" ng-controller="navCtrl" class="text-center">
+                           <span style="font-size:30px;cursor:pointer;color: white;" ng-click="openNav()">
+                           &#9776;
+                           </span>
+                        </div>
+                     </div>
+                     <div class="col-md-3">
+                        <div class="logo">
+                           <a href="\"><img src="images/logo-scroll.png" /> </a>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="callNowTxt en caen">CALL NOW! <span>011 225 5304</span></div>
+                     </div>
+                     <div class="col-md-2">
+                        <div class="flag">
+                           <img src="images/flag1.png" />
+                           <img src="images/flag2.png" />
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <div class="itemCartBox openCart">
+                           <div class="itemBox">
+                              <img src="images/cartIconWhite.png" />
+                              <span class="getCount"></span>
+                              <span class="en text-white">Items</span>
+                              <i class="fa fa-chevron-down text-white"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="hide1" class="container">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="logo">
+                           <a href="\"><img src="images/logo.png" /> </a>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="callNowTxt en cen">CALL NOW! <span>011 225 5304</span></div>
+                     </div>
+                     <div class="col-md-2">
+                        <div class="flag">
+                           <img src="images/flag1.png" />
+                           <img src="images/flag2.png" />
+                        </div>
+                     </div>
+                     <div class="col-md-2">
+                        <div class="itemCartBox openCart">
+                           <div class="itemBox">
+                              <img src="images/cartIconWhite.png" />
+                              <span class="getCount"></span>
+                              <span class="en text-white">Items</span>
+                              <i class="fa fa-chevron-down text-white"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="wrapper" class="clearfix animsition cfan" style="background-color: #363636;">
+               <div id="newNav" class="container">
+                  <div id="main-navbar-toggle">
+                     <i class="fa fa-bars editt"></i>
+                  </div>
+                  <div id="branding">
+                     <a href="\" class="brand-normal bn" data-light-logo="images/logo.png"><img src="images/logo.png" /></a>
+                  </div>
+                  <nav id="main-navbar">
+                     <ul id="main-navbar-ul">
+                        <li><span id="menu-item-26" class="homeIcon menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5 current_page_item menu-item-26"><a href="\" onclick="togglehide()">Home</a></span></li>
+                        <li><span id="menu-item-27" class="aboutIcon menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5 current_page_item menu-item-27"><a href="/#about" onclick="togglehide()">Our Vision</a></span></li>
+                        <li><span id="menu-item-29" class="contactIcon menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5 current_page_item menu-item-29"><a href="/#contact" onclick="togglehide()">Contact</a></span></li>
+                        <li><span id="menu-item-198" class="loginIcon menu-item menu-item-type-post_type menu-item-object-page menu-item-198"><a href="#" onclick="togglehide()">Login</a></span></li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="ui segment" id="PreLoader" style="display:none">
+         <div class="ui active inverted dimmer" style="position:fixed">
+            <div class="ui large text loader" id="loaderText">Loading branches</div>
+         </div>
+         <p></p>
+      </div>
+      <script>
+         function togglehide(){
+             $('#main-navbar-ul').hide();
+         }
+      </script>
+      <div class="container-fluid pl-0 pr-0" ui-view></div>
+      <footer id="footer">
+         <div class="footer-main fmn">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-4 collinks">
+                     <p class="en1">
+                        QUICK LINKS
+                     </p>
+                     <ul class="ulstyl">
+                        <li><a href="\">HOME</a></li>
+                        <li><a href="/#about">ABOUT</a></li>
+                        <li><a href="/#contact">CONTACT</a></li>
+                        <li><a href="/#example">ORDER ONLINE</a></li>
+                        <li><a href="#/locationmobile">TERMS</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-4 colfol">
+                     <p class="en1">  FOLLOW US ON </p>
+                     <p>
+                        <img src="images/twitter.png" class="twmg">
+                        <a href="https://twitter.com/real_burger_sa" class="twtimg">Twitter</a>
+                     </p>
+                     <p>
+                        <img src="images/insta.png" class="inmg">
+                        <a href="https://www.instagram.com/real_burger_sa/" class="instimg">Instagram</a>
+                     </p>
+                     <p>
+                        <img src="images/snapchat.png" class="ims">
+                        <a href="#" class="smg">Snapchat</a>
+                     </p>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="subscribe">
+                        <p class="en1">
+                           SUBSCRIBE
+                        </p>
+                        <input class="mails form-control" type="email" name="EMAIL" id="emailSubscribe" placeholder="Your email address">
+                        <div class="field fld">
+                           <input class="btn-subscribe subz" type="submit" value="Submit">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="f-close" class="footer-bottom fbtm footr_btm">
+            <div class="row m-0">
+               <div class="col-md-12">
+                  <div class="en enlg">
+                     © 2017 The Real Burger. All Rights Reserved.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- ============================================
+         ============== Vendor JavaScripts ===============
+         ============================================= -->
+      <script type="text/javascript" src="assets/js/vendor/bootstrap.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/superfish/js/superfish.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/jRespond/jRespond.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/smoothscroll/SmoothScroll.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/appear/jquery.appear.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/stellar/jquery.stellar.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/flexslider/jquery.flexslider-min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/magnific/jquery.magnific-popup.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/owl/owl.carousel.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/jflickrfeed/jflickrfeed.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/tweet-js/jquery.tweet.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/countTo/jquery.countTo.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/morrisjs/raphael-min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/morrisjs/morris.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/mixitup/jquery.mixitup.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+      <script type="text/javascript" src="assets/js/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+      <!-- animsition js -->
+      <script src="assets/js/vendor/animsition/js/jquery.animsition.min.js"></script>
+      <!--  Custom JavaScripts  -->
+      <script type="text/javascript" src="assets/js/global.js"></script>
+      <script src="js/slick.min.js"></script>
+      <script src="js/OnlineOrder.js"></script>
+      <script src="js/locationMap.js"></script>
+      <script src="js/custom.js"></script>
+      <script>
+         $(document).ready(function () {
+         
+         
+         
+             $('.itemDetailCheckout').click(function () {
+         
+         
+                 if (sessionStorage.getItem("objWebOrder") !== undefined) {
+                     var ObjWebOrder = JSON.parse(sessionStorage.getItem("objWebOrder"));
+         
+                     if (ObjWebOrder.itemArray.length > 0) {
+         
+                         if (parseInt(sessionStorage.getItem("minAmount")) >= parseInt($('#panel_iframe').contents().find('.AmtSubTotal').html())) {
+                             alert('You can not continue order. Sub Total Minimum : ' + sessionStorage.getItem("minAmount") + '');
+                         }
+                         else {
+                             $('#panel_iframe').contents().find('.continueCheckout').click();
+                         }
+                     }
+                     else {
+                         // alert('you have no item for checkout');
+                     }
+         
+                 }
+         
+             });
+         })
+      </script>
+      <script type="text/javascript">
+         //$('.masthead')
+         //     .visibility({
+         //         once: false,
+         //         onBottomPassed: function () {
+         //             $('.fixed.menu').transition('fade in');
+         //         },
+         //         onBottomPassedReverse: function () {
+         //             $('.fixed.menu').transition('fade out');
+         //         }
+         //     });
+         
+         
+         
+         
+         $('.mobileIcons').click(function () {
+         
+             $('.pusher').removeClass("dimmed");
+             $('.mobileLeft').sidebar('setting', 'transition', 'overlay').sidebar('toggle');
+             //$('#' + ReceiptPanel).html(sessionStorage.getItem("receiptPanel"));
+         });
+         
+         
+         
+         $('#account-panel .menu .item').tab();
+         
+         
+         var myLatLng = { lat: 24.706904, lng: 46.770361 };
+         
+         function initMap() {
+         
+             var locations = [
+                  ['<h4>The Real Burger</h4> <br> 3289 Prince Majed Bin Abdulaziz Rd, Ar Rayyan, Riyadh<br> 14213 7585 Prince Majed Bin Abdulaziz Rd, Ar Rayyan, Riyadh 14213 7585, Saudi Arabia <br>', 24.709265, 46.774287],
+                  ['<h4>The Real Burger</h4> <br> سلمان الفارسي Salman Al Farsi, An Nahdah, Riyadh<br> 13221 4034, Saudi Arabia', 24.762392, 46.810139],
+                  ['<h4>The Real Burger</h4> <br>5 الامير مقرن بن عبدالعزيز، Al Mughrizat <br>Riyadh 12483 6961 <br>Saudi Arabia', 24.760226, 46.718236],
+                  ['<h4>شارع البخاري، Alrayan</h4><br> Buraydah 52378 Saudi Arabia', 26.395068, 43.919185],
+                  ['<h4>The Real Burger ذا ريل برجر</h4>', 25.231375, 51.486953],
+                  ['<h4>The Real Burger</h4> <br>Abi Bakr As Siddiq Branch Rd, Ar Rabi<br>Riyadh 13316 Saudi Arabia', 24.808573, 46.670405],
+                  ['<h4>The Real Burger</h4>', 24.675379, 46.821815],
+                   ['<h4>The Real Burger</h4>', 24.1625166, 47.3307266],
+             ];
+         
+         
+         
+             var map = new google.maps.Map(document.getElementById('map'), {
+                 zoom: 12,
+                 center: myLatLng,
+                 // draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true,
+                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                 styles: [
+              {
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    }
+                  ]
+              },
+              {
+                  "elementType": "labels.icon",
+                  "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                  ]
+              },
+              {
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                        "color": "#616161"
+                    }
+                  ]
+              },
+              {
+                  "elementType": "labels.text.stroke",
+                  "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "administrative.land_parcel",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                        "color": "#bdbdbd"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "poi",
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                        "color": "#eeeeee"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "poi",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                        "color": "#757575"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "poi.business",
+                  "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "poi.park",
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                        "color": "#e5e5e5"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "poi.park",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                        "color": "#9e9e9e"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "road",
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                        "color": "#ffffff"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "road",
+                  "elementType": "labels.icon",
+                  "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "road.arterial",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                        "color": "#757575"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "road.highway",
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                        "color": "#dadada"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "road.highway",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                        "color": "#616161"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "road.local",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                        "color": "#9e9e9e"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "transit",
+                  "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "transit.line",
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                        "color": "#e5e5e5"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "transit.station",
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                        "color": "#eeeeee"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "water",
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                        "color": "#c9c9c9"
+                    }
+                  ]
+              },
+              {
+                  "featureType": "water",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                        "color": "#9e9e9e"
+                    }
+                  ]
+              }
+                 ]
+             });
+         
+             var infowindow = new google.maps.InfoWindow();
+         
+             var marker, i;
+         
+             for (i = 0; i < locations.length; i++) {
+                 marker = new google.maps.Marker({
+                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                     map: map,
+                     icon: "../images/cd-icon-location.png"
+                 });
+         
+                 google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                     return function () {
+                         infowindow.setContent(locations[i][0]);
+                         infowindow.open(map, marker);
+                     }
+                 })(marker, i));
+             }
+         
+         
+             // setTimeout(function() {
+         
+             // google.maps.event.trigger(map,'resize');
+             // map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
+             //  }, 500);
+         
+         
+         }
+         
+         
+         //  initMap();
+         
+         
+      </script>
+   </body>
+</html>

@@ -1,0 +1,449 @@
+﻿
+<div class="bg_img">
+    <div class="img-responsive omeimg">
+        <div class="container mrg-top">
+
+            <div class="col-sm-3 cls3">
+                <ul id="hide3" class="menu">
+                    <li id="menu-item-26" class="homeIcon menu-item menu-item-type-post_type menu-item-object-page  menu-item-26"><a href="\" class="linkBurger">Home</a></li>
+                    <li id="menu-item-27" class="aboutIcon menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="/#about">About</a></li>
+                    <li id="menu-item-31" class="orderIcon menu-item menu-item-type-post_type menu-item-object-page menu-item-31 current-menu-item page_item page-item-5"><a href="/#onlineorder">Online Order</a></li>
+                    <li id="menu-item-29" class="contactIcon menu-item menu-item-type-post_type menu-item-object-page  menu-item-29"><a href="/#contact">Contact</a></li>
+                    <li id="menu-item-198" class="loginIcon menu-item menu-item-type-post_type menu-item-object-page menu-item-198"><a href="#">Login</a></li>
+                </ul>
+            </div>
+            <br />
+
+            <div class="col-sm-12 calsm12">
+                <h2 class="ui inverted header bannerContent ihb">
+                    <span class="font-color-orange">R</span>EAL TASTE AND<br> HIGH QUALITY SE<span class="font-color-orange">R</span>VICE
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="marnpos-container_exclude"></div>
+<div class="RightMenuInvoice ui right sidebar menu" style="display:none">
+    <span class="item label-red-invoice" style="padding:10px!important"> <i class="align close icon mobileReceipt" style="float:right;font-size:30px;margin-top:-15px"></i></span>
+    <div class="invoice-panel">
+        <div class="ui middle aligned divided list receipt">
+            <div id="receipt-mobile" class="ui grid"></div>
+            <div class="ui section divider item-divider-full"></div>
+            <div class="ui two column grid remove-margin">
+                <div class="one column row remove-margin">
+                    <div class="column text-center label-red remove-margin"><label style="font-size:18px" class="foodFor">Food For </label></div>
+                </div>
+                <div class="column remove-margin" style="display:none">
+                    <div class="ui icon-feature">
+                        <i class="btn-delivery" onclick="SelectOrderType(this,'delivery')"></i>
+                    </div>
+                    <label>Delivery</label>
+                </div>
+                <div class="column remove-margin">
+                    <div class="ui icon-feature">
+                        <i class="btn-pickup active" onclick="SelectOrderType(this,'Web')"></i>
+                    </div>
+                    <label>Pick Up</label>
+                </div>
+            </div>
+            <div class="ui section divider item-divider-full"></div>
+            <div class="ui two column grid remove-margin">
+                <div class="one column row remove-margin">
+                    <div class="column text-center label-red remove-margin"><label style="font-size:18px;color:#777">Total</label></div>
+                    <div class="column text-center label-red remove-margin"><label style="font-size:18px" class="footer-total">SR <span class="AmtSubTotal"></span></label></div>
+                    <div class="column text-center label-red remove-margin continueCheckout" onclick="continueCheckout()"><label style="font-size:18px" class="btn-checkout">Checkout</label></div>
+                </div>
+            </div>
+            <div class="ui section divider item-divider-full"></div>
+            <div class="ui two column grid remove-margin">
+                <div class="one column row remove-margin">
+                    <div class="column text-left label-gray remove-margin">
+                        <label style="text-align:left;/*/*padding-left:40px /* /*">Estimated Time: <span class="deliveryTime price-mrg"> 45</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="ui section divider item-divider-full"></div>
+            <div class="ui two column grid remove-margin">
+                <div class="one column row remove-margin">
+                    <div class="column text-left label-gray remove-margin">
+                        <label style="text-align:left;/*/*padding-left:40px /* /*">Delivery Charges: <span class="AmtDelivery price-mrg"> 45 </span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="ui section divider item-divider-full"></div>
+            <div class="ui two column grid remove-margin">
+                <div class="one column row remove-margin">
+                    <div class="column text-left label-gray remove-margin">
+                        <label style="text-align:left;/*/*padding-left:40px /* /*;padding-bottom:10px!important">Delivery Min: <span class="minAmount price-mrg"></span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="ui section divider item-divider-full"></div>
+            <div class="ui two column grid remove-margin">
+                <div class="one column row remove-margin">
+                    <div class="column text-left label-gray remove-margin">
+                        <label style="text-align:left;/*/*padding-left:40px /* /*;padding-bottom:10px!important" id="grandTotal">Grand Total: <span class="AmtGrandTotal price-mrg"></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mobileReceipt">
+    <div class="mobileReceipt">
+      
+        <img src="../images/mbl-invoice.png">
+
+    </div>
+</div>
+<div class="ui vertical feature header" style="">
+    <div class="ui mobilemenu" style="height:125px">
+        <div class="ui raised very padded text container" style="margin-top:35px">
+            <div class="ui pointing menu tabs" id="mainmenu" style="text-align:center">
+                <a class="item active" id="btn-step-1" onclick="gotoTab('step1',this)"> Step 1<span>Find a Location</span></a>
+                <a class="item" id="btn-step-2" onclick="gotoTab('step2',this)"> Step 2 <span>Find a Food</span></a>
+                <a class="item" id="btn-step-3" onclick="ContinueCheckoutFromMenu(this)"> Step 3 <span>Submit Order</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="ui segment" id="PreLoader">
+    <div class="ui active inverted dimmer" style="position:fixed">
+        <div class="ui large text loader" id="loaderText">Loading branches</div>
+    </div>
+    <p></p>
+</div>-->
+<div class="ui" id="step1">
+    <div class="ui error message" id="messagebox1" style="display:none!important"><i class="close icon" onclick='RemoveMessageBox()'></i><label class="list">You must include both a upper and lower case letters in your password.</label></div>
+    <div class="ui centered page grid" style="margin-top:30px">
+        <div id="demoHeader" class="header1" style="">
+            <br>
+            <button class="btn-next-green" onclick="gotoTab('step2',2)">Next</button>
+            <div id="waterwheelcarousel" class="center"></div>
+        </div>
+    </div>
+</div>
+<div class="ui" id="step2" style="display:none">
+    <div class="ui centered page grid">
+        <div class="sixteen wide column">
+            <div class="ui raised very padded text container" style="max-width:100%!important;width:100%!important">
+                <div class="ui stackable doubling eleven column grid category" id="ddlCategory"></div>
+                <div class="ui error message" id="messagebox" style="display:none!important"><i class="close icon" onclick='RemoveMessageBox()'></i><label class="list">You must include both a upper and lower case letters in your password.</label></div>
+                <div class="ui two column stackable grid" id="mainRow">
+                    <div class="eleven wide column" id="eleven">
+                        <div class="product-panel" id="step2-2" style="display:none!important"></div>
+                        <div class="product-panel" id="step2-3" style="display:none!important">
+                            <div class="ui six column stackable doubling grid ui">
+                                <div class="ui middle aligned divided list" style="width:100%">
+                                    <div class="item">
+                                        <div class="right floated content btn-accordian-heading" onclick="customAccordian(this,'ReturningCustomer')">
+                                            <div class="ui button btn-customers">Sign in</div>
+                                        </div>
+                                        <div class="content heading-title-accordian">
+                                            <label> Returning Customer</label>
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                        </div>
+                                        <div class="customer-content" id="ReturningCustomer">
+                                            <label class="heading"> Returning Customer</label>
+                                            <form class="ui form ReturningCustomer" style="margin-top: 15px;">
+                                                <div class="field">
+                                                    <label>Mobile</label>
+                                                    <input type="text" name="mobile" id="txtRetCusMobile" class="input-text" placeholder="Mobile" style="width:300px">
+                                                </div>
+                                                <div class="field">
+                                                    <label>Password</label>
+                                                    <input type="text" name="password" id="txtRetCusPwd" class="input-text" placeholder="Password" style="width:300px">
+                                                </div>
+                                                <div class="field" style="display: none;">
+                                                    <div class="ui checkbox" style="margin-top:10px">
+                                                        <input type="checkbox" tabindex="0" class="hidden" id="chkRetCust" name="terms">
+                                                        <label style="font-size:11px;margin-top:-14px;margin-left:10px">I agree to the Terms and Conditions</label>
+                                                    </div>
+                                                </div>
+                                                <button class="ui button submit btn-login-dark" type="button">Sign in</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="right floated content btn-accordian-heading" onclick="customAccordian(this,'GuestOrder')">
+                                            <div class="ui button btn-customers">Continue</div>
+                                        </div>
+                                        <div class="content heading-title-accordian">
+                                            <label> Order as Guest?</label>
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                        </div>
+                                        <div class="customer-content" id="GuestOrder">
+                                            <label class="heading"> Order as Guest?</label>
+                                            <form class="ui form GuestOrder">
+                                                <h4 class="ui header" style="margin-top:10px;margin-bottom:20px;margin-left:5px">Personal Information</h4>
+                                                <div class="field">
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <input type="text" name="name" id="txtGuestName" class="input-text" placeholder="Full Name">
+                                                        </div>
+                                                        <div class="field">
+                                                            <input type="text" name="email" id="txtGuestEmail" class="input-text" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <input type="text" name="contact" id="txtGuestContact" class="input-text" placeholder="Contact">
+                                                        </div>
+                                                        <div class="field" style="display:none">
+                                                            <input type="text" name="" id="txtGuestDOB" class="input-text" placeholder="Date of Birth">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field" style="display:none">
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <input type="text" name="" id="txtGuestGender" class="input-text" placeholder="Male">
+                                                        </div>
+                                                        <div class="field"></div>
+                                                    </div>
+                                                </div>
+                                                <div id="DeliveryAddressGuest">
+                                                    <h4 class="ui header" style="margin-top:10px;margin-bottom:20px;margin-left:5px">Delivery Address</h4>
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <input type="text" name="" class="input-text" id="txtGuest_Country" placeholder="Saudia Arabia" readonly="true" value="Saudia Arabia">
+                                                        </div>
+                                                        <div class="field">
+                                                            <select class="ui search dropdown input-text" id="txtGuest_City">
+                                                                <option value="">City</option>
+                                                                <option value="Riyadh" selected>Riyadh</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="two fields">
+                                                        <div class="field"></div>
+                                                        <div class="field"></div>
+                                                    </div>
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <input type="text" name="" class="input-text" id="txtGuest_PostalCode" placeholder="Postal Code">
+                                                        </div>
+                                                        <div class="field"></div>
+                                                    </div>
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <textarea class="input-text" cols="5" id="txtGuest_Address" name="addresscustomer" style="height:100px;width:99%!important" placeholder="Address"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ui button submit btn-login-dark" tabindex="0">Continue</div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="right floated content btn-accordian-heading" onclick="customAccordian(this,'RegisterYourself')">
+                                            <div class="ui button btn-customers">Register</div>
+                                        </div>
+                                        <div class="content heading-title-accordian">
+                                            <label> Register Yourself</label>
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                        </div>
+                                        <div class="customer-content" id="RegisterYourself">
+                                            <label class="heading"> Register Yourself</label>
+                                            <form class="ui form RegisterYourself">
+                                                <h4 class="ui header" style="margin-top:10px;margin-bottom:20px;margin-left:5px">Registration</h4>
+                                                <div class="field">
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <input type="text" name="cname" id="txtCustomerName" class="input-text" placeholder="Full Name">
+                                                        </div>
+                                                        <div class="field">
+                                                            <input type="text" name="cemail" id="txtEmail" class="input-text" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <input type="text" name="ccontact" id="txtContact" class="input-text" placeholder="Contact">
+                                                        </div>
+                                                        <div class="field">
+
+
+                                                            <input type="password" name="cpassword" id="txtPassword" class="input-text" placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <div class="two fields">
+                                                        <div class="field">
+                                                            <select class="dropdown" id="txtGender" name="cgender">
+                                                                <option value="">Select</option>
+                                                                <option value="male">Male</option>
+                                                                <option value="female">Female</option>
+                                                            </select>
+
+                                                        </div>
+                                                        <div class="field">
+                                                            <input type="text" name="cbirthdate" id="txtDOB" class="input-text" placeholder="Date of Birth">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field">
+                                                    <div id="DeliveryAddressReg">
+                                                        <h4 class="ui header" style="margin-top:10px;margin-bottom:20px;margin-left:5px">Delivery Address</h4>
+                                                        <div class="two fields">
+                                                            <div class="field">
+                                                                <input type="text" name="ccountry" class="input-text" id="txtReg_Country" placeholder="Saudia Arabia" readonly="true" value="Saudia Arabia">
+                                                            </div>
+                                                            <div class="field">
+                                                                <select name="ccity" class="dropdown input-text" id="txtReg_City">
+                                                                    <option value="">City</option>
+                                                                    <option value="Riyadh" selected>Riyadh</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="two fields">
+                                                            <div class="field"></div>
+                                                            <div class="field"></div>
+                                                        </div>
+                                                        <div class="two fields">
+                                                            <div class="field">
+                                                                <input type="text" name="cpostal" class="input-text" id="txtReg_PostalCode" placeholder="Postal Code">
+                                                            </div>
+                                                            <div class="field"></div>
+                                                        </div>
+                                                        <div class="two fields">
+                                                            <div class="field">
+                                                                <textarea class="input-text" cols="5" id="txtReg_Address" name="addresscustomer" style="height:100px;width:99%!important" placeholder="Address"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ui button submit btn-login-dark" tabindex="0">Register</div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-panel" id="step-finished" style="display:none">
+                            <div id="pnlOrderStatus"> </div>
+                            <a href="" class="btn-login-dark" style="float:left!important;margin-top:20px;text-align:center;border-radius:8px"> New Order</a>
+                        </div>
+                    </div>
+                    <div class="five wide column" id="five">
+                        <div class="invoice-panel" id="invoicepanel">
+                            <label class="label-red"></label>
+                            <div class="ui middle aligned divided list receipt">
+                                <div id="receipt" class="ui grid"></div>
+                                <div class="ui section divider item-divider-full"></div>
+                                <div class="ui two column grid remove-margin">
+                                    <div class="one column row remove-margin">
+                                        <div class="column text-center label-red remove-margin"><label class="foodFor" style="font-size:18px">Food For </label></div>
+                                    </div>
+                                    <div class="column remove-margin" style="display:none">
+                                        <div class="ui icon-feature">
+                                            <i class="btn-delivery" onclick="SelectOrderType(this,'delivery')"></i>
+                                        </div>
+                                        <label>Delivery</label>
+                                    </div>
+                                    <div class="column remove-margin">
+                                        <div class="ui icon-feature">
+                                            <i class="btn-pickup active" onclick="SelectOrderType(this,'Web')"></i>
+                                        </div>
+                                        <label>Pick Up</label>
+                                    </div>
+                                </div>
+                                <div class="ui section divider item-divider-full"></div>
+                                <div class="ui two column grid remove-margin">
+                                    <div class="one column row remove-margin">
+                                        <div class="column text-center label-red remove-margin"><label style="font-size:18px;color:#777">Total</label></div>
+                                        <div class="column text-center label-red remove-margin"><label style="font-size:18px" class="footer-total">SR <span class="AmtSubTotal"></span></label></div>
+                                        <div class="column text-center label-red remove-margin continueCheckout" onclick="continueCheckout()"><label style="font-size:18px" class="btn-checkout">Checkout</label></div>
+                                    </div>
+                                </div>
+                                <div class="ui section divider item-divider-full"></div>
+                                <div class="ui two column grid remove-margin">
+                                    <div class="one column row remove-margin">
+                                        <div class="column text-left label-gray remove-margin">
+                                            <label style="text-align:left;/*padding-left:40px /*">Estimated Time: <span class="deliveryTime price-mrg"> 45</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui section divider item-divider-full"></div>
+                                <div class="ui two column grid remove-margin">
+                                    <div class="one column row remove-margin">
+                                        <div class="column text-left label-gray remove-margin">
+                                            <label style="text-align:left;/*padding-left:40px /*">Delivery Charges: <span class="AmtDelivery price-mrg"> 45 </span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui section divider item-divider-full"></div>
+                                <div class="ui two column grid remove-margin">
+                                    <div class="one column row remove-margin">
+                                        <div class="column text-left label-gray remove-margin">
+                                            <label style="text-align:left;/*padding-left:40px /*;padding-bottom:10px!important">Delivery Min: <span class="minAmount price-mrg"></span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui section divider item-divider-full"></div>
+                                <div class="ui two column grid remove-margin">
+                                    <div class="one column row remove-margin">
+                                        <div class="column text-left label-gray remove-margin">
+                                            <label style="text-align:left;/*padding-left:40px /*;padding-bottom:10px!important" id="grandTotal">Grand Total: <span class="AmtGrandTotal price-mrg"></span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-panel" id="confirmOrder" style="display:none!important">
+    <div class="ConfirmOrderBox">
+        <img class="invoice-logo" src="images/logo-receipt.png" />
+        <div>Phone: 011 225 5304</div>
+        <div>Email: info@thereal-sa.com</div>
+        <div class="border-line"></div>
+        <div class="ui two column grid">
+            <div class="column rowspace-min">Date:</div>
+            <div class="column align-right rowspace-min ciDate">5-10-2017</div>
+            <div class="column rowspace-min">Time: </div>
+            <div class="column align-right rowspace-min ciTime">12:00 AM</div>
+        </div>
+        <div class="border-line"></div>
+        <div class="ui two column grid" id="ConfirmInvoice"></div>
+        <div class="border-line"></div>
+        <div class="ui two column grid">
+            <div class="column rowspace-min">Sub Total</div>
+            <div class="column align-right rowspace-min AmtSubTotal">1000 </div>
+            <div class="column rowspace-min">Delivery Charges</div>
+            <div class="column align-right rowspace-min AmtDelivery">0</div>
+            <div class="column rowspace-min">Grand Total</div>
+            <div class="column align-right rowspace-min AmtGrandTotal">100</div>
+        </div>
+        <div class="border-line"></div>
+        <img class="img-orderconfirm" src="../images/confirm.png" />
+        <a class="ui button white color-blue btn-orderconfirm" onclick="confirmCheckout()">Confirm Order</a>
+        <p class="invoice-note">Please make sure the items you order cannot be change or return once you confirm the order.</p>
+        <div>Powered by marnpos</div>
+    </div>
+</div>
+<div style="display:none">
+    <div id="map"></div>
+    <input value="" id="prev" style="width:500px;margin:10px;padding:10px;border:1px solid #ddd" />
+    <input value="" id="mapValue" style="width:500px;margin:10px;padding:10px;border:1px solid #ddd" />
+    <input value="" id="next" style="width:500px;margin:10px;padding:10px;border:1px solid #ddd" />
+    <button>Previous</button> <button>Next</button>
+</div>
+
+
+
+
+
+<!-- <script>
+        MenuHideShow();
+   </script> -->

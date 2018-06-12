@@ -1,0 +1,137 @@
+﻿<div id="BGLI" class="BGLI" style="min-height: 508px !important;">
+        <div id="mbgi" class="mbgi">
+            <img src="../images/header mobile.png" class="wdth img-responsive" />
+        </div>
+    <div id="ordronbtn" class="ordronbtn row text-center">
+        <span>
+            <input type="text"
+                    class="btn btn-default active location-btn rl-wd" value="Cart" />
+            <a ng-click="bacttomodifiers()" class="cart-clr">
+                <img src="../images/cart .png" />
+            </a>
+        </span>
+    </div>
+
+        <div class="bg-color-wyt">
+
+            <div class="cart-modifiers" ng-repeat="item in values">
+                <div class="row">
+                    <div class="col-xs-3" style="padding-right:0px;padding-left:20px;padding-top:10px;">
+                        <div class="cart-counter">
+                            <span>
+                                <span id="subtract1" ng-click="decrease($index, item.quantity, item.totalPrice)">
+                                    <img src="../images/order less.png">
+                                </span>
+                                <span id="count1">{{item.quantity}} </span>
+                                <span id="add1" ng-click="increase($index, item.quantity, item.totalPrice)" style="float: right; margin-top: 1px;">
+                                    <img src="../images/order add.png">
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-5 modifier-font" style="padding-left: 11px;padding-right: 0px;">
+                        <div class="txt1">
+                            <div class="white"> {{item.name}}</div>
+                        </div>
+                        <div class="top">
+                            {{item.modifiersName}}
+                        </div>
+                    </div>
+
+                    <div class="col-xs-2" style="padding-left: 18px;padding-right: 0px">
+                        <div class="cart-am" ng-model="dltPrice">
+                            {{item.quantity * item.totalPrice | number:2}}
+                        </div>
+                    </div>
+
+                    <div class="col-xs-2" style="padding-left: 28px;">
+                        <div class="dlt">
+                            <img src="../images/delete.png" ng-click="deleteItem(item);" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-border"></div>
+            </div>
+
+            <div class="subtitles">
+                <div class="col-xs-12">
+                    <div class="total">
+                        <span class="sub">Sub Total</span>
+                        <span class="sar" ng-model="priceSet">
+                            {{grandTotal | number:2}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aft-total">
+                <div class="col-xs-12" style="margin-top: 20px;padding: 18px 13px 18px 13px;background-color: #eaeaea;">
+                    <span class="to">TOTAL</span>
+                    <span class="total-amount" ng-model="prices">{{grandTotal | number:2}}</span>
+                </div>
+            </div>
+
+
+            <!--<div class="delivery/pickup">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="merge">
+                            <div class="col-xs-6" style="padding-right: 0px;">
+                                <div class="bag">
+                                    <a ng-click="">
+                                        <img src="../images/pickup enable.png" />
+                                        <span class="pickup" style="color:black;">
+                                            Pickup
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-6" style="padding-left: 0px;">
+                                <div class="bike">
+                                    <a ng-click="">
+                                        <img src="../images/delivery disable.png" />
+                                        <span class="delivery" style="color:black;">
+                                            Delivery
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="col-xs-12">
+                <a a ng-click="cnfrmPickup()">
+                    <div class="pick">
+                        <img src="../images/pickup enable.png" />
+                        <span class="pickup" style="color:black;">
+                            Pickup
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="continue/checkout"></div>
+        </div>
+    </div>
+
+<div class="mobile-sticky-footer2" style="">
+    <div class="row">
+        <div class="col-xs-6 " style="padding-left:0px; padding-right:0px;">
+            <div class="continue con-brd">
+                <a ng-click="backtorealmenu()" style="color:white !important;">  Continue Order</a>
+            </div>
+        </div>
+        <div class="col-xs-6" style="">
+            <a ng-click="registr(Checkout)">
+                <div class="col-xs-6" style="padding-left:0px; padding-right:0px;">
+                    <div id="place-order" class="checkout" style="color:white;">
+                        {{Checkout}}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

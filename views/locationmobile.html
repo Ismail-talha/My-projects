@@ -1,0 +1,53 @@
+﻿<div id="" class="step-1">
+    <div class="min-height">
+        <div id="mbgi" class="mbgi">
+            <img src="../images/header mobile.png" class="wdth img-responsive" />
+        </div>
+
+        <div id="BGLI" class="BGLI">
+            <div id="ordronbtn" class="ordronbtn row text-center">
+                <span>  <a ng-click="backtoorder()" class="arrow-clr"><img src="../images/back .png" /></a><input type="button" class="btn btn-default active location-btn" value="LOCATIONS" /></span>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 select">
+                    <div class="row">
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 slct-txt ">
+                            Select you location to order
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="">
+                                <a ng-click="nexttorealmenu()"><input type="button" value="Next" class="btn-default active pull-right nxt_btn" ng-click="saved();" ng-disabled="localSave==undefined"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--///////////////////LOADER/////////////////-->
+            <!--<div class="js">
+                <div id="preloader1"></div>
+            </div>-->
+            <div class="loader_cntr"><img id="mySpinner" src="../images/loader.gif" ng-show="loading" /></div>
+           
+            <div class="radio-clr" ng-repeat="item in branches">
+                <div class="radio row brdr-row clr-clr">
+                    <div ng-click="setSession(item); chkselected(item.SessionID)">
+                        <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 list-icon">
+                            <img src="../images/Group 142.png" />
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-10 col-lg-10 list-txt ">
+                            <label style="padding-left: 0px;">{{item.Name}} &nbsp;&nbsp; {{item.Address}}</label>
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 list-btn ">
+                            <div class="round">
+                                <input type="checkbox" id="{{item.SessionID}}" name="{{item.SessionID}}" ng-model="item.isselected" value="item.SessionID" ng-click="chkselected(item.SessionID)" />
+                                <label for="{{item.SessionID}}"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

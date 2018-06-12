@@ -1,0 +1,51 @@
+@font-face {
+	font-family: 'Rockwell';
+	src: url('../fonts/Rockwell.eot');
+	src: url('../fonts/components/Rockwell.eot?#iefix') format('embedded-opentype'),
+url('../fonts/Rockwell.woff') format('woff'),
+url('../fonts/Rockwell.ttf') format('truetype'),
+url('../fonts/Rockwell.svg#Rockwell') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Rockwell-Bold';
+	src: url('../fonts/Rockwell-Bold.eot');
+	src: url('../fonts/Rockwell-Bold.eot?#iefix') format('embedded-opentype'),
+url('../fonts/Rockwell-Bold.woff') format('woff'),
+url('../fonts/Rockwell-Bold.ttf') format('truetype'),
+url('../fonts/Rockwell-Bold.svg#Rockwell-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Prime';
+	src: url('../fonts/Prime-Light.eot');
+	src: url('../fonts/Prime-Light.eot?#iefix') format('embedded-opentype'),
+url('../fonts/Prime-Light.woff') format('woff'),
+url('../fonts/Prime-Light.ttf') format('truetype'),
+url('../fonts/Prime-Light.svg#Prime-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Prime';
+	src: url('../fonts/Prime-Regular.eot');
+	src: url('../fonts/Prime-Regular.eot?#iefix') format('embedded-opentype'),
+url('../fonts/Prime-Regular.woff') format('woff'),
+url('../fonts/Prime-Regular.ttf') format('truetype'),
+url('../fonts/Prime-Regular.svg#Prime-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'bukra';
+    src: url('../fonts/29ltbukraregular.ttf') format('truetype');
+    font-weight: normal;
+	font-style: normal;
+}

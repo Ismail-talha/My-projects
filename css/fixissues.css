@@ -1,0 +1,116 @@
+﻿.mrg-top {
+    margin-top: -117px;
+}
+
+.price-mrg {
+    margin-right: 20px;
+}
+
+.header-mrg {
+    margin-top: 0px !important;
+}
+
+.price-tag2 {
+    transform: rotate(-44deg);
+    position: absolute;
+    right: -3px;
+    bottom: 10px;
+    z-index: 1;
+    color: #fff;
+    font-size: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.dividerInner1 {
+    height: 20px;
+}
+
+.din1 {
+    background-color: orange;
+}
+
+.burgerIcon1 {
+    background: url(../images/burgerRoundIcon.png) rgb(248,147,31) center center no-repeat !important;
+    width: 80px;
+    text-align: center;
+    height: 80px;
+    position: relative;
+    display: block;
+    border-radius: 100%;
+    top: -35px;
+    left: 0;
+    right: 0;
+    margin: -14px auto;
+}
+
+.colororange {
+    color: #f79220;
+}
+
+.about {
+    text-align: center;
+    border: unset;
+}
+
+.colorgrey {
+    color: gray;
+}
+
+.fontstyling {
+    font-weight: bold;
+    font-family: Rockwell;
+    font-size: 3em;
+    padding: 1px 3px 38px 4px;
+}
+
+.alst {
+    font-family: 'Rockwell-bold';
+    font-weight: bold;
+    color: #444;
+}
+
+.colorred {
+    color: red;
+}
+
+.cntnr {
+    padding: 43px 34px 7px 0px;
+}
+
+.thekeyword {
+    color: rgba(0, 0, 0, 0.87);
+    margin: calc(2rem - 0.14285em ) 0em 1rem;
+    font-family: 'Rockwell-bold';
+    font-weight: bold;
+    line-height: 1.2857em;
+}
+
+
+
+
+.alpha {
+    color: white;
+}
+
+.block {
+    background-color: rgb(199,51,8);
+    padding: 10px;
+    border: 1px solid white;
+    outline: 20px solid rgb(199,51,8);
+}
+
+.three {
+    margin: 50px 0 0 0;
+}
+
+.linkBurger {
+    padding-top: 13px;
+}
+.realmenu-mg{
+        margin-bottom: 62px;
+}
+.sidevav-pad{
+    padding: 7px 52px 10px !important;
+    padding-left: 52px !important;
+}
